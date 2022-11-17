@@ -1,0 +1,23 @@
+<div class="row" style="margin: 20px;">
+    <div class="col col-lg-5">
+        <img style="width: 100%;" src="{{product.image}}" alt="">
+    </div>
+    <div class="col col-lg-7">
+        <h2 style="text-align: center ;" >{{product.name}}</h2>
+        <div >
+            <h3>{{product.price}}USD</h3>
+        </div>
+        <div >
+            <p>{{product.description}}</p>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary">
+                <a href="/product/update/{{product._id}}" style="color: white;">Update</a>
+            </button>
+
+            <button type="button" class="btn btn-danger">
+                <a href="/product/delete/{{product._id}}" style="color: white;">Delete</a>
+            </button>
+        </div>
+    </div>
+</div>
