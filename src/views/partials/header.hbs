@@ -18,13 +18,14 @@
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
-      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+      <a class="navbar-brand mt-2 mt-lg-0" href="/">
         LNA SHOP
       </a>
     </div>
     <!-- Collapsible wrapper -->
-    <form class="d-flex input-group w-auto">
+    <form class="d-flex input-group w-auto" method="GET" action="/product/search">
       <input
+        name="name"
         type="search"
         class="form-control rounded"
         placeholder="Search"
@@ -32,14 +33,16 @@
         aria-describedby="search-addon"
       />
       <span class="input-group-text border-0" id="search-addon">
-        <i class="fas fa-search"></i>
+        <button type="submit" style="border:0px;">
+          <i class="fas fa-search"></i>
+        </button>
       </span>
-    </form>
+    </form method="GET" action="#">
 
     <!-- Right elements -->
     <div class="d-flex align-items-center">
       <!-- Icon -->
-      <a class="text-reset me-3" href="#">
+      <a class="text-reset me-3" href="/cart">
         <i class="fas fa-shopping-cart"></i>
       </a>
 
@@ -59,18 +62,28 @@
           class="dropdown-menu dropdown-menu-end"
           aria-labelledby="navbarDropdownMenuAvatar"
         >
-          <li>
-            <a class="dropdown-item" href="">User: <span style="color: rgb(75, 164, 224);">{{user}}</span></a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="/product/save/form">Add Product</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="/authentication/create">Register</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="/authentication">Login</a>
-          </li>
+          {{#if user }}
+            
+            <li>
+              <a class="dropdown-item" href="">User: <span style="color: rgb(75, 164, 224);">{{user}}</span></a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/product/save/form">Add Product</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/logout">Logout</a>
+            </li> 
+            
+          {{else}}
+            
+            <li>
+              <a class="dropdown-item" href="/authentication/create">Register</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/authentication">Login</a>
+            </li>
+       
+          {{/if}}
         </ul>
 
       </div>
