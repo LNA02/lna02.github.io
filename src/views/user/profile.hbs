@@ -1,11 +1,10 @@
-<div class="row" style="margin: 20px;">
+<div class="row" style="margin: 20px; margin-bottom: 250px;">
     {{#each user}}
         <div class="col col-lg-3" style="margin-bottom: 20px;" >
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Name: {{this.name}}</h5>
                     <p class="card-text">Email: {{this.email}}</p>
-                    <p class="card-text">Password: {{this.password}}</p>
                     <a href="/authentication/getUpdateUser/{{this._id}}" class="btn btn-raised btn-success pull-right">
                         Update
                     </a>
